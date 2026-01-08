@@ -22,6 +22,8 @@ public class RespawnPlayer : MonoBehaviour
             return;  
         }
 
+        PlayerManager.Instance.setDeathCount();
+
         controller.enabled = false;
         Debug.Log("Death");
         controller.transform.position = spawnPoint.position;
