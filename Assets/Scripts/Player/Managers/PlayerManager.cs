@@ -28,12 +28,12 @@ public class PlayerManager : MonoBehaviour
 
     // functions
 
-    public void setDeathCount()
+    public void SetDeathCount()
     {
         playerData.deathCount++;
     }
 
-    public int getDeathCount()
+    public int GetDeathCount()
     {
         return playerData.deathCount;
     }
