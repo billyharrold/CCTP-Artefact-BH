@@ -10,13 +10,17 @@ public class PlayerManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Destroy(gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
             return;
 
         }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
 
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        
     }
 
     // Update is called once per frame

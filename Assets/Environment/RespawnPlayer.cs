@@ -23,6 +23,7 @@ public class RespawnPlayer : MonoBehaviour
         }
 
         PlayerManager.Instance.setDeathCount();
+        Debug.Log(PlayerManager.Instance.getDeathCount());
 
         controller.enabled = false;
         Debug.Log("Death");
