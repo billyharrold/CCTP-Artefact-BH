@@ -30,6 +30,7 @@ public class ClassSystem : MonoBehaviour
 
     public void UpdateSkillLevels(int deathCount)
     {
+        // fuzzifying on death count vs graphing curves //
         deaths = deathCount;
 
         beginnerValue = beginnerCurve.Evaluate(deaths);
@@ -43,7 +44,7 @@ public class ClassSystem : MonoBehaviour
         SetText();
     }
 
-
+    
 
 
     void SetText()
