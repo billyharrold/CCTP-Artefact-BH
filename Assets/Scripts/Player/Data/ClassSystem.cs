@@ -14,6 +14,7 @@ public class ClassSystem : MonoBehaviour
     public TextMeshProUGUI beginnerText;
     public TextMeshProUGUI intermediateText;
     public TextMeshProUGUI advancedText;
+    public TextMeshProUGUI skillOutputText;
 
     private float advancedValue = 0.0f;
     private float intermediateValue = 0.0f;
@@ -23,6 +24,17 @@ public class ClassSystem : MonoBehaviour
 
     private int deaths;
 
+    public enum SkillLevel
+    {
+        Beginner,     // 0.0
+        Intermediate, // 0.65
+        Advanced      // 1.0
+    }
+    
+    
+    
+
+
     private void Start()
     {
         SetText();
@@ -31,27 +43,68 @@ public class ClassSystem : MonoBehaviour
     public void UpdateSkillLevels(int deathCount)
     {
         // fuzzifying on death count vs graphing curves //
-        deaths = deathCount;
+        //deaths = deathCount;
 
-        beginnerValue = beginnerCurve.Evaluate(deaths);
-        intermediateValue = intermediateCurve.Evaluate(deaths);
-        advancedValue = advancedCurve.Evaluate(deaths);
 
-        beginnerValue = (float)Math.Round(beginnerValue, 2);
-        intermediateValue = (float)Math.Round(intermediateValue, 2);
-        advancedValue = (float)Math.Round(advancedValue, 2);
 
+        //beginnerValue = (float)Math.Round(beginnerValue, 2);
+        //intermediateValue = (float)Math.Round(intermediateValue, 2);
+        //advancedValue = (float)Math.Round(advancedValue, 2);
+
+        FuzzData(deathCount);
         SetText();
     }
 
-    
+    private void FuzzData(int deaths)
+    {
+        beginnerValue = Mathf.Clamp01(beginnerCurve.Evaluate(deaths));
+        intermediateValue = Mathf.Clamp01(intermediateCurve.Evaluate(deaths));
+        advancedValue = Mathf.Clamp01(advancedCurve.Evaluate(deaths));
+    }
+
+    public float GetSkillScore()
+    {
+        float numerator =
+            (beginnerValue * 0.0f) +
+            (intermediateValue * 0.65f) +
+            (advancedValue * 1.0f);
+
+        float denominator =
+            beginnerValue +
+            intermediateValue +
+            advancedValue;
+
+        if (denominator == 0)
+        {
+            return 0.0f;
+        }
+
+        return numerator / denominator;
+    }
+
+    public SkillLevel GetDominantSkillLevel()
+    {
+        float score = GetSkillScore();
+        if (score < 0.45f)
+        {
+            return SkillLevel.Beginner;
+        }
+        else if (score < 0.85f)
+        {
+            return SkillLevel.Intermediate;
+        }
+        else
+        {
+            return SkillLevel.Advanced;
+        }
+    }
 
 
     void SetText()
     {
-        beginnerText.text = string.Format(labelText, beginnerValue);
-        intermediateText.text = string.Format(labelText, intermediateValue);
-        advancedText.text = string.Format(labelText, advancedValue);
+        beginnerText.text = string.Format(labelText, (float)Math.Round(beginnerValue, 2));
+        intermediateText.text = string.Format(labelText, (float)Math.Round(intermediateValue, 2));
+        advancedText.text = string.Format(labelText, (float)Math.Round(advancedValue, 2));
 
     }
 }
