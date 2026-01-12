@@ -102,9 +102,14 @@ public class ClassSystem : MonoBehaviour
 
     void SetText()
     {
+        // Rounding strictly for UI display purposes //
         beginnerText.text = string.Format(labelText, (float)Math.Round(beginnerValue, 2));
         intermediateText.text = string.Format(labelText, (float)Math.Round(intermediateValue, 2));
         advancedText.text = string.Format(labelText, (float)Math.Round(advancedValue, 2));
+
+
+        SkillLevel level = GetDominantSkillLevel();
+        skillOutputText.text = "Skill level: " + level.ToString();
 
     }
 }
