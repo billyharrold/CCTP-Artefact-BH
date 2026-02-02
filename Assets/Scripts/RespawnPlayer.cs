@@ -8,7 +8,7 @@ public class RespawnPlayer : MonoBehaviour
     public Transform spawnPoint;
     public CharacterController controller;
 
-    public ClassSystem classSystem;
+    //public ClassSystem classSystem;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,13 +24,13 @@ public class RespawnPlayer : MonoBehaviour
             return;  
         }
 
-        PlayerManager.Instance.SetDeathCount();
-        Debug.Log(PlayerManager.Instance.GetDeathCount());
+        //PlayerManager.Instance.SetDeathCount();
+        //Debug.Log(PlayerManager.Instance.GetDeathCount());
 
         controller.enabled = false;
-        Debug.Log("Death");
+        //Debug.Log("Death");
         controller.transform.position = spawnPoint.position;
         controller.enabled = true;
-        classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());
+        //classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());
     }
 }
