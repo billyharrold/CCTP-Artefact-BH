@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 
 public class RespawnPlayer : MonoBehaviour
 {
+    // Class that is only responsible for respawning the player at a designated spawn point upon death.
+    // Gets called from checkpoint and kill player scripts.
 
     public static RespawnPlayer Instance; 
     
@@ -45,6 +47,8 @@ public class RespawnPlayer : MonoBehaviour
         Debug.Log("Death");
         controller.transform.position = spawnTransform.position;
         controller.enabled = true;
+
+
         //classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());
     }
 }

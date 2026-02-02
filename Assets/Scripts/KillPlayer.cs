@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
+    // Script managing what happens when the player collides with a kill box.
+    // Increases death count in player data. Decoupled from respawn logic.
+
 
     public ClassSystem classSystem;
 
