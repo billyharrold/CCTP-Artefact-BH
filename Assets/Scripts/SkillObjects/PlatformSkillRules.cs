@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(
     fileName = "SkillRules",
     menuName = "Skill level model object")]
+// need to rename class feel like its not very obvious.
 public class PlatformSkillRules : ScriptableObject
 {
     // All the weighting factors for deaths, time etc gonna go here.

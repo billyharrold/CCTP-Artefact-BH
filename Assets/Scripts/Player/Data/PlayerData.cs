@@ -12,6 +12,7 @@ public enum SkillLevel
 public struct PlayerData
 {
     // Where all player data is stored related to skill classification.
+    // Data here will be consumed by other scripts and systems to adjust UI delivery etc.
 
 
     public int deathCount;

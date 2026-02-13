@@ -3,8 +3,13 @@ using NUnit.Framework.Constraints;
 using TMPro;
 using UnityEngine;
 
+// Moving the stuff and logic here into better structured SkillClassifier class as this was a prototype system.
+// Aiming to decouple all the UI stuff into its own class/system so scaling up will be a bit easier and cleaner.
 public class ClassSystem : MonoBehaviour
 {
+
+
+
     [Header("Skill Level Curve")] 
     public AnimationCurve beginnerCurve;
     public AnimationCurve intermediateCurve;
@@ -57,6 +62,7 @@ public class ClassSystem : MonoBehaviour
 
     private void FuzzData(int deaths)
     {
+        // moved
         beginnerValue = Mathf.Clamp01(beginnerCurve.Evaluate(deaths));
         intermediateValue = Mathf.Clamp01(intermediateCurve.Evaluate(deaths));
         advancedValue = Mathf.Clamp01(advancedCurve.Evaluate(deaths));
@@ -64,6 +70,7 @@ public class ClassSystem : MonoBehaviour
 
     public float GetSkillScore()
     {
+        // moved
         float numerator =
             (beginnerValue * 0.0f) +
             (intermediateValue * 0.65f) +
