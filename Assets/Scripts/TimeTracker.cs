@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR;
 
 public class TimeTracker : MonoBehaviour
@@ -7,35 +8,35 @@ public class TimeTracker : MonoBehaviour
     // Can be reusable and attached to any GameObject as time tracking will
     //be needed for tracking skill levels based on time taken to complete areas.
 
-    public bool IsRunning;
-    public float ElapsedTime;
+    public bool isRunning;
+    public float elapsedTime;
 
-    float StartTime;
+    float startTime;
 
     public void StartTimer()
     {
-        IsRunning = true;
-        StartTime = Time.time;
+        isRunning = true;
+        startTime = Time.time;
     }
 
     public float StopTimer()
     {
-        if (!IsRunning)
+        if (!isRunning)
         {
-            return ElapsedTime;
+            return elapsedTime;
         }
 
 
-        IsRunning = false;
-        ElapsedTime = Time.time - StartTime;
+        isRunning = false;
+        elapsedTime = Time.time - startTime;
 
-        return ElapsedTime;
+        return elapsedTime;
     }
 
     public void ResetTimer()
     {
-        IsRunning = false;
-        ElapsedTime = 0f;
+        isRunning = false;
+        elapsedTime = 0f;
     }
 
 }
