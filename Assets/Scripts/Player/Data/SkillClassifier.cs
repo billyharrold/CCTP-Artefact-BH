@@ -30,12 +30,31 @@ public static class SkillClassifier
         else
         {
             score = numerator / denominator;
-        }  
+        }
+
+        SkillLevel playerLevel;
+
+        if (score < skillRules.beginnerThreshold)
+        {
+            playerLevel = SkillLevel.Beginner;
+        }
+        else if (score < skillRules.advancedThreshold)
+        {
+            playerLevel = SkillLevel.Intermediate;
+        }
+        else
+        {
+            playerLevel = SkillLevel.Advanced;
+        }
 
         // sends back data to player data.
         return new PlayerData
         {
-
+            skillScore = score,
+            playerLevel = playerLevel,
+            beginnerValue = beginnerValue,
+            intermediateValue = intermediateValue,
+            advancedValue = advancedValue,
         };
     }
 

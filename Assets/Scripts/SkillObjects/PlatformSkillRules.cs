@@ -1,5 +1,6 @@
 using System.IO.Enumeration;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [CreateAssetMenu(
@@ -30,7 +31,7 @@ public class PlatformSkillRules : ScriptableObject
 
     [Header("Skill level thresholds")]
     [Range(0.0f, 1f)] public float beginnerThreshold = 0.4f;
-    [Range(0.0f, 1f)] public float intermediateThreshold = 0.8f;
+    public float advancedThreshold = 0.8f;
 
 
 
