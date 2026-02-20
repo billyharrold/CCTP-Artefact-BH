@@ -1,7 +1,13 @@
 using UnityEngine;
+using TMPro;
 
-public class SkillEvaluator : MonoBehaviour
+public class UIManagement : MonoBehaviour
 {
+
+    [SerializeField] private DataEvaluator dataEvaluator;
+    public TextMeshProUGUI skillLevelText;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +18,12 @@ public class SkillEvaluator : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public void FinishLevel()
+    {
+        
+
     }
 }

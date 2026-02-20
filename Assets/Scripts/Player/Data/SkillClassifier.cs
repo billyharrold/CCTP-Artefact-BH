@@ -47,6 +47,8 @@ public static class SkillClassifier
             playerLevel = SkillLevel.Advanced;
         }
 
+        Debug.Log($"Performance Score: {performanceScore}, Skill Score: {score}, Player Level: {playerLevel}");
+
         // sends back data to player data.
         return new PlayerData
         {
