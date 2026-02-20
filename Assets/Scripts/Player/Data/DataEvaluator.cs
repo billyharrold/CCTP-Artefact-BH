@@ -6,14 +6,16 @@ public class DataEvaluator : MonoBehaviour
     // uses scriptable objects to define rules for data weighting and classification.
 
     [SerializeField] private PlatformSkillRules skillModel;
+    
+
 
     private int deaths;
     private float elapsedTime;
 
     // spelt this function wrong - FIX
-    public PlayerData EvaulatePlayerData()
+    public PlayerData EvaluatePlayerData()
     {
-        float timedPerformance = Mathf.InverseLerp(skillModel.fastTime, skillModel.maxTime, elapsedTime);
+        float timedPerformance = Mathf.InverseLerp(skillModel.fastTime, skillModel.maxTime, PlayerManager.Instance.GetElapsedTime());
 
         float deathPerformance = 1f - Mathf.InverseLerp(0, skillModel.maxDeaths, PlayerManager.Instance.GetDeathCount());
 

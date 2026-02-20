@@ -30,6 +30,7 @@ public class TimeTracker : MonoBehaviour
         isRunning = false;
         elapsedTime = Time.time - startTime;
 
+        PlayerManager.Instance.SetElapsedTime(elapsedTime);
         return elapsedTime;
     }
 

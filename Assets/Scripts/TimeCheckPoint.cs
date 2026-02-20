@@ -25,7 +25,7 @@ public class TimeCheckPoint : MonoBehaviour
             else if (checkpointType == CheckpointType.End)
             {
                 float elapsedTime = timeTracker.StopTimer();
-                Debug.Log("Elapsed Time: " + elapsedTime + " seconds");
+                Debug.Log("Elapsed Time: " + PlayerManager.Instance.GetElapsedTime() + " seconds");
             }
         }
     }

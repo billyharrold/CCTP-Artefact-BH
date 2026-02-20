@@ -37,4 +37,15 @@ public class PlayerManager : MonoBehaviour
     {
         return playerData.deathCount;
     }
+
+
+    public void SetElapsedTime(float time)
+    {
+        playerData.elapsedTime = time;
+    }
+
+    public float GetElapsedTime()
+    {
+        return playerData.elapsedTime;
+    }
 }

@@ -9,7 +9,7 @@ public class finishLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            dataEvaluator.EvaulatePlayerData();
+            dataEvaluator.EvaluatePlayerData();
             Debug.Log("Level Finished!");
         }
     }

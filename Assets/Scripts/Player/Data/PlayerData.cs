@@ -24,6 +24,6 @@ public struct PlayerData
     public float intermediateValue;
     public float advancedValue;
 
-
+    public float elapsedTime;
 
 }
