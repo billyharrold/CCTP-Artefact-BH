@@ -9,8 +9,19 @@ public class UIController : MonoBehaviour
     //public GameObject intermediateText;
     //public GameObject advancedText;
 
-    [SerializeField] private PlayerData playerData;
+    
     public GameObject[] panels;
+
+
+    private void OnEnable()
+    {
+        PlayerManager.Instance.OnPlayerDataUpdated += UpdatePanels;
+    }
+
+    private void OnDisable()
+    {
+        PlayerManager.Instance.OnPlayerDataUpdated -= UpdatePanels;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,15 +37,35 @@ public class UIController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdatePanels();
-    }
+    
 
-    void UpdatePanels()
+    // Update is called once per frame
+
+
+    private void UpdatePanels(PlayerData data)
     {
         
+        switch (data.playerLevel)
+        {
+            case SkillLevel.Beginner:
+                panels[0].SetActive(true);
+                panels[1].SetActive(false);
+                panels[2].SetActive(false);
+                break;
+            case SkillLevel.Intermediate:
+                panels[0].SetActive(false);
+                panels[1].SetActive(true);
+                panels[2].SetActive(false);
+                break;
+            case SkillLevel.Advanced:
+                panels[0].SetActive(false);
+                panels[1].SetActive(false);
+                panels[2].SetActive(true);
+                break;
+        }
+
+
+
         //switch (classSystem.GetDominantSkillLevel())
         //{
         //    case ClassSystem.SkillLevel.Beginner:
@@ -53,25 +84,6 @@ public class UIController : MonoBehaviour
         //        panels[2].SetActive(true);
         //        break;
         //}
-
-        switch (playerData.playerLevel)
-        {
-            case SkillLevel.Beginner:
-                panels[0].SetActive(true);
-                panels[1].SetActive(false);
-                panels[2].SetActive(false);
-                break;
-            case SkillLevel.Intermediate:
-                panels[0].SetActive(false);
-                panels[1].SetActive(true);
-                panels[2].SetActive(false);
-                break;
-            case SkillLevel.Advanced:
-                panels[0].SetActive(false);
-                panels[1].SetActive(false);
-                panels[2].SetActive(true);
-                break;
-        }
 
     }
 

@@ -23,4 +23,11 @@ public class DataEvaluator : MonoBehaviour
 
         return SkillClassifier.EvaluateSkill(skillModel, performanceScore);
     }
+
+
+    public void ApplyNewSkillData()
+    {
+        PlayerData newData = EvaluatePlayerData();
+        PlayerManager.Instance.UpdatePlayerData(newData);
+    }
 }

@@ -1,10 +1,13 @@
 using UnityEngine;
+using System;
 
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
     public PlayerData playerData = new PlayerData();
+
+    public event Action<PlayerData> OnPlayerDataUpdated;
 
     void Awake()
     {
@@ -31,6 +34,7 @@ public class PlayerManager : MonoBehaviour
     public void SetDeathCount()
     {
         playerData.deathCount++;
+        OnPlayerDataUpdated?.Invoke(playerData);
     }
 
     public int GetDeathCount()
@@ -42,10 +46,17 @@ public class PlayerManager : MonoBehaviour
     public void SetElapsedTime(float time)
     {
         playerData.elapsedTime = time;
+        OnPlayerDataUpdated?.Invoke(playerData);
     }
 
     public float GetElapsedTime()
     {
         return playerData.elapsedTime;
+    }
+
+    public void UpdatePlayerData(PlayerData data)
+    {
+        playerData = data;
+        OnPlayerDataUpdated?.Invoke(data);
     }
 }
