@@ -5,14 +5,11 @@ public class UIController : MonoBehaviour
 {
 
     //public ClassSystem classSystem;
-
-
-
     //public GameObject beginnerText;
     //public GameObject intermediateText;
     //public GameObject advancedText;
 
-    public PlayerData playerData;
+    [SerializeField] private PlayerData playerData;
     public GameObject[] panels;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -75,6 +72,7 @@ public class UIController : MonoBehaviour
                 panels[2].SetActive(true);
                 break;
         }
+
     }
 
 

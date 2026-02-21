@@ -9,7 +9,7 @@ public enum SkillLevel
     Intermediate, // 0.65
     Advanced      // 1.0
 }
-public struct PlayerData
+public class PlayerData
 {
     // Where all player data is stored related to skill classification.
     // Data here will be consumed by other scripts and systems to adjust UI delivery etc.
