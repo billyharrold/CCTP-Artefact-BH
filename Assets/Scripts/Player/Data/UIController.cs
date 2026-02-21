@@ -4,12 +4,15 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
 
-    public ClassSystem classSystem;
+    //public ClassSystem classSystem;
+
+
 
     //public GameObject beginnerText;
     //public GameObject intermediateText;
     //public GameObject advancedText;
 
+    public PlayerData playerData;
     public GameObject[] panels;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,19 +38,38 @@ public class UIController : MonoBehaviour
     void UpdatePanels()
     {
         
-        switch (classSystem.GetDominantSkillLevel())
+        //switch (classSystem.GetDominantSkillLevel())
+        //{
+        //    case ClassSystem.SkillLevel.Beginner:
+        //        panels[0].SetActive(true);
+        //        panels[1].SetActive(false);
+        //        panels[2].SetActive(false);
+        //        break;
+        //    case ClassSystem.SkillLevel.Intermediate:
+        //        panels[0].SetActive(false);
+        //        panels[1].SetActive(true);
+        //        panels[2].SetActive(false);
+        //        break;
+        //    case ClassSystem.SkillLevel.Advanced:
+        //        panels[0].SetActive(false);
+        //        panels[1].SetActive(false);
+        //        panels[2].SetActive(true);
+        //        break;
+        //}
+
+        switch (playerData.playerLevel)
         {
-            case ClassSystem.SkillLevel.Beginner:
+            case SkillLevel.Beginner:
                 panels[0].SetActive(true);
                 panels[1].SetActive(false);
                 panels[2].SetActive(false);
                 break;
-            case ClassSystem.SkillLevel.Intermediate:
+            case SkillLevel.Intermediate:
                 panels[0].SetActive(false);
                 panels[1].SetActive(true);
                 panels[2].SetActive(false);
                 break;
-            case ClassSystem.SkillLevel.Advanced:
+            case SkillLevel.Advanced:
                 panels[0].SetActive(false);
                 panels[1].SetActive(false);
                 panels[2].SetActive(true);
