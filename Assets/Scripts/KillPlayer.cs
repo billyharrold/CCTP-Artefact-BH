@@ -15,7 +15,7 @@ public class KillPlayer : MonoBehaviour
         {
             return;
         }
-
+        RespawnPlayer.Instance.OnTriggerEnter(other);
         PlayerManager.Instance.SetDeathCount();
         Debug.Log(PlayerManager.Instance.GetDeathCount());
        // classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());

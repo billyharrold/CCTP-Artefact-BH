@@ -21,7 +21,7 @@ public class PlatformSkillRules : ScriptableObject
     [Header("Times")]
     // 60f per minute - max level time is 1 min rn.
     public float maxTime = 60f;
-    public float fastTime = 20f;
+    public float fastTime = 10f;
 
 
     [Header("Skill Level Curves")]

@@ -16,7 +16,7 @@ MonoBehaviour:
   timeWeighting: 0.3
   maxDeaths: 10
   maxTime: 60
-  fastTime: 20
+  fastTime: 10
   beginnerCurve:
     serializedVersion: 2
     m_Curve:
