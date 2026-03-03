@@ -5,11 +5,11 @@ public class Checkpoint : MonoBehaviour
 {
     // Class for setting player spawn points when colliding with a checkpoint.
     
-    private CapsuleCollider trigger;
+    private Collider trigger;
 
     private void Awake()
     {
-        trigger = GetComponent<CapsuleCollider>();
+        trigger = GetComponent<Collider>();
     }
     private void OnTriggerEnter(Collider other)
     {
