@@ -3680,6 +3680,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 113205340}
   m_SourcePrefab: {fileID: 100100000, guid: d6b52b94df5c8c14cabd5d2d026a2bf3, type: 3}
+--- !u!114 &738002561 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3766869830057363394, guid: 2dac59f7ce9174d4a826d2e989e33d8a, type: 3}
+  m_PrefabInstance: {fileID: 2812386996174461599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &738672247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11644,6 +11655,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64bc5a75a26a0046800e67ffae8931d, type: 3}
+--- !u!1 &5307614971407515537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7609230518211736739, guid: 2dac59f7ce9174d4a826d2e989e33d8a, type: 3}
+  m_PrefabInstance: {fileID: 2812386996174461599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5831068588607044078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11866,7 +11882,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1956348747459783737, guid: 49319aecc02d20a458a9e4080a245ce0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.52
+      value: 19.04
       objectReference: {fileID: 0}
     - target: {fileID: 1956348747459783737, guid: 49319aecc02d20a458a9e4080a245ce0, type: 3}
       propertyPath: m_LocalScale.y
@@ -11916,6 +11932,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6112294080015085757, guid: 49319aecc02d20a458a9e4080a245ce0, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 738002561}
+    - target: {fileID: 6112294080015085757, guid: 49319aecc02d20a458a9e4080a245ce0, type: 3}
+      propertyPath: content
+      value: 
+      objectReference: {fileID: 11400000, guid: 9575db1da72406c429e332be4d0164ad, type: 2}
+    - target: {fileID: 6112294080015085757, guid: 49319aecc02d20a458a9e4080a245ce0, type: 3}
+      propertyPath: popUpPanel
+      value: 
+      objectReference: {fileID: 5307614971407515537}
     - target: {fileID: 7039277182590564643, guid: 49319aecc02d20a458a9e4080a245ce0, type: 3}
       propertyPath: m_Name
       value: UITrigger
