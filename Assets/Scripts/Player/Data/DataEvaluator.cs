@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DataEvaluator : MonoBehaviour
 {
     // this is gonna recieve gameplay data like deaths etc, process it then send it to classifier to determine the skill level of the player.
     // uses scriptable objects to define rules for data weighting and classification.
 
-    [SerializeField] private PlatformSkillRules skillModel;
+   [SerializeField] private PlatformSkillRules DefaultskillModel;
     
 
 
@@ -13,9 +14,9 @@ public class DataEvaluator : MonoBehaviour
     private float elapsedTime;
 
     // spelt this function wrong - FIX
-    public PlayerData EvaluatePlayerData()
+    public PlayerData EvaluatePlayerData(PlatformSkillRules skillModel)
     {
-        float timedPerformance = Mathf.InverseLerp(skillModel.fastTime, skillModel.maxTime, PlayerManager.Instance.GetElapsedTime());
+        float timedPerformance = Mathf.InverseLerp(skillModel.maxTime, skillModel.fastTime, PlayerManager.Instance.GetElapsedTime());
 
         float deathPerformance = 1f - Mathf.InverseLerp(0, skillModel.maxDeaths, PlayerManager.Instance.GetDeathCount());
 
@@ -25,9 +26,20 @@ public class DataEvaluator : MonoBehaviour
     }
 
 
-    public void ApplyNewSkillData()
+    public void ApplyNewSkillData(PlatformSkillRules skillModel = null)
     {
-        PlayerData newData = EvaluatePlayerData();
+        PlatformSkillRules model;
+        if (skillModel != null)
+        {
+            model = skillModel;
+        }
+        else
+        {
+            model = DefaultskillModel;
+        }
+
+
+        PlayerData newData = EvaluatePlayerData(model);
         PlayerManager.Instance.UpdatePlayerData(newData);
     }
 }
