@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour
             panel.SetActive(false);
         }
 
-        panels[0].SetActive(true);
+        //panels[0].SetActive(true);
 
     }
 

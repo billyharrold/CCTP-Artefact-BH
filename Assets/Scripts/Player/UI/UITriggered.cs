@@ -13,6 +13,8 @@ public class UITriggered : MonoBehaviour
 
     [SerializeField] private Image icon;
 
+    public bool keepActive;
+
     void Awake()
     {
         popUpPanel.SetActive(false);
@@ -22,6 +24,11 @@ public class UITriggered : MonoBehaviour
     {
         popUpPanel.SetActive(true);
         icon.sprite = content.UIicon;
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
         popUpPanel.GetComponentInChildren<TextMeshProUGUI>().text = content.prompt;
     }
 
@@ -29,6 +36,13 @@ public class UITriggered : MonoBehaviour
     {
         popUpPanel.SetActive(false);
         popUpPanel.GetComponentInChildren<TextMeshProUGUI>().text = "null";
+
+        if (keepActive)
+        {
+            UpdateText();
+            popUpPanel.SetActive(true);
+        }
+
     }
 
 }

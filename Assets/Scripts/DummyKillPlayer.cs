@@ -10,8 +10,8 @@ public class DummyKillPlayer : MonoBehaviour
 
     //public ClassSystem classSystem;
 
-    [SerializeField] private DataEvaluator dataEvaluator;
-    [SerializeField] private PlatformSkillRules sectionSkillRules;
+    //[SerializeField] private DataEvaluator dataEvaluator;
+    //[SerializeField] private PlatformSkillRules sectionSkillRules;
 
     private void OnTriggerEnter(Collider other)
     {
