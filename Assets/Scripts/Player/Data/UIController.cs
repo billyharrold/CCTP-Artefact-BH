@@ -12,6 +12,10 @@ public class UIController : MonoBehaviour
     
     public GameObject[] panels;
 
+    
+    [Header("UI Groups for different level sections")]
+    public UISkillSets checkpointUI;
+
 
     private void OnEnable()
     {
