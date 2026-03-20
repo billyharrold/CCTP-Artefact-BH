@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
 
     public event Action<PlayerData> OnPlayerDataUpdated;
 
+    private SkillLevel lastSkillLevel;
+
     void Awake()
     {
          if (Instance == null)
@@ -56,7 +58,23 @@ public class PlayerManager : MonoBehaviour
 
     public void UpdatePlayerData(PlayerData data)
     {
-        playerData = data;
-        OnPlayerDataUpdated?.Invoke(data);
+        // refactored to only update when skill level changes - was causing UI updates when any data cahanged.
+        //playerData = data;
+        //OnPlayerDataUpdated?.Invoke(data);
+
+        if (data.playerLevel != playerData.playerLevel)
+        {
+            playerData = data;
+
+            lastSkillLevel = data.playerLevel;
+
+            OnPlayerDataUpdated?.Invoke(data);
+        }
+        else
+        {
+            playerData = data;
+        }
+
+
     }
 }
