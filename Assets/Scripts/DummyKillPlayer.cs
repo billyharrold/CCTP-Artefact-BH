@@ -10,6 +10,9 @@ public class DummyKillPlayer : MonoBehaviour
 
     //public ClassSystem classSystem;
 
+    [SerializeField] private DataEvaluator dataEvaluator;
+    [SerializeField] private PlatformSkillRules sectionSkillRules;
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
@@ -19,6 +22,7 @@ public class DummyKillPlayer : MonoBehaviour
         //RespawnPlayer.Instance.OnTriggerEnter(other);
         PlayerManager.Instance.SetDeathCount();
         Debug.Log(PlayerManager.Instance.GetDeathCount());
+        //dataEvaluator.ApplyNewSkillData(sectionSkillRules);
         // classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());
     }
 }

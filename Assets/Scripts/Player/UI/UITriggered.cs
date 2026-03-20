@@ -28,6 +28,7 @@ public class UITriggered : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         popUpPanel.SetActive(false);
+        popUpPanel.GetComponentInChildren<TextMeshProUGUI>().text = "null";
     }
 
 }

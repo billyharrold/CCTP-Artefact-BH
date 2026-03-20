@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be1c9254b4356e4f84f9701874b32ae, type: 3}
   m_Name: Walking Area
   m_EditorClassIdentifier: 
-  deathWeighting: 0.2
-  timeWeighting: 0.8
+  deathWeighting: 0
+  timeWeighting: 1
   maxDeaths: 1
-  maxTime: 30
-  fastTime: 5
+  maxTime: 20
+  fastTime: 2
   beginnerCurve:
     serializedVersion: 2
     m_Curve:
@@ -188,5 +188,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  beginnerThreshold: 0.4
-  advancedThreshold: 0.8
+  beginnerThreshold: 0.5
+  advancedThreshold: 0.9

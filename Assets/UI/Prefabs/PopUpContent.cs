@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "PopUpContent", menuName = "Scriptable Objects/PopUpContent")]
+[CreateAssetMenu(fileName = "PopUpContent", menuName = "PopUpContent")]
 public class PopUpContent : ScriptableObject
 {
     public Sprite UIicon;
