@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
     public void SetDeathCount()
     {
         playerData.deathCount++;
-        OnPlayerDataUpdated?.Invoke(playerData);
+        //OnPlayerDataUpdated?.Invoke(playerData);
     }
 
     public int GetDeathCount()
@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
     public void SetElapsedTime(float time)
     {
         playerData.elapsedTime = time;
-        OnPlayerDataUpdated?.Invoke(playerData);
+        //OnPlayerDataUpdated?.Invoke(playerData);
     }
 
     public float GetElapsedTime()
@@ -76,5 +76,11 @@ public class PlayerManager : MonoBehaviour
         }
 
 
+    }
+
+    public SkillLevel GetSkillLevel()
+    {
+        Debug.Log("Getting playerLevel");
+        return playerData.playerLevel;
     }
 }

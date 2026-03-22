@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -9,87 +10,154 @@ public class UIController : MonoBehaviour
     //public GameObject intermediateText;
     //public GameObject advancedText;
 
-    
-    public GameObject[] panels;
+    // from original version where it was only 3 panels, one for each skill level.
+    //public GameObject[] panels;
 
+
+    public static UIController Instance;
     
     [Header("UI Groups for different level sections")]
     public UISkillSets checkpointUI;
+    public UISkillSets jumpingTeachingUI;
+    public UISkillSets movingSpikesUI;
 
+   
+    public UISkillState skillState;
+    
+    private SkillLevel currentSkillLevel;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
 
     private void OnEnable()
     {
-        PlayerManager.Instance.OnPlayerDataUpdated += UpdatePanels;
+        PlayerManager.Instance.OnPlayerDataUpdated += UpdateSkillLevel;
     }
 
     private void OnDisable()
     {
-        PlayerManager.Instance.OnPlayerDataUpdated -= UpdatePanels;
+        PlayerManager.Instance.OnPlayerDataUpdated -= UpdateSkillLevel;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
+        currentSkillLevel = PlayerManager.Instance.GetSkillLevel();
+
+       SetUIState(UISkillState.Checkpoints);
+
+        //checkpointUI.HideAllUI();
+        //jumpingTeachingUI.HideAllUI();
+        //movingSpikesUI.HideAllUI();
+
         // set all panels hidden except first one
-        foreach (var panel in panels)
-        {
-            panel.SetActive(false);
-        }
+        //foreach (var panel in panels)
+        //{
+        //    panel.SetActive(false);
+        //}
 
         //panels[0].SetActive(true);
 
     }
 
+    // going to use this to set state - making a trigger object so it triggers when players enter certain section.
+    // e.g dying, entering section where being taught about jumping.
+
+
+    public void UpdateSkillLevel(PlayerData data)
+    {
+        currentSkillLevel = data.playerLevel;
+        UpdatePanels();
+    }
+
+    public void SetUIState(UISkillState state)
+    {
+        skillState = state;
+        UpdatePanels();
+    }
+
     
+
+    public void UpdatePanels()
+    {
+        checkpointUI.HideAllUI();
+        jumpingTeachingUI.HideAllUI();
+        movingSpikesUI.HideAllUI();
+
+        switch (skillState)
+        {
+            case UISkillState.Checkpoints:
+                checkpointUI.ShowUI(currentSkillLevel);
+                break;
+            case UISkillState.JumpingTeaching:
+                jumpingTeachingUI.ShowUI(currentSkillLevel);
+                break;
+            case UISkillState.MovingSpikes:
+                movingSpikesUI.ShowUI(currentSkillLevel);
+                break;
+        }
+    }
 
     // Update is called once per frame
 
 
-    private void UpdatePanels(PlayerData data)
-    {
+    //private void UpdatePanels(PlayerData data)
+    //{
         
-        switch (data.playerLevel)
-        {
-            case SkillLevel.Beginner:
-                panels[0].SetActive(true);
-                panels[1].SetActive(false);
-                panels[2].SetActive(false);
-                break;
-            case SkillLevel.Intermediate:
-                panels[0].SetActive(false);
-                panels[1].SetActive(true);
-                panels[2].SetActive(false);
-                break;
-            case SkillLevel.Advanced:
-                panels[0].SetActive(false);
-                panels[1].SetActive(false);
-                panels[2].SetActive(true);
-                break;
-        }
+    //    switch (data.playerLevel)
+    //    {
+    //        case SkillLevel.Beginner:
+    //            panels[0].SetActive(true);
+    //            panels[1].SetActive(false);
+    //            panels[2].SetActive(false);
+    //            break;
+    //        case SkillLevel.Intermediate:
+    //            panels[0].SetActive(false);
+    //            panels[1].SetActive(true);
+    //            panels[2].SetActive(false);
+    //            break;
+    //        case SkillLevel.Advanced:
+    //            panels[0].SetActive(false);
+    //            panels[1].SetActive(false);
+    //            panels[2].SetActive(true);
+    //            break;
+    //    }
 
 
 
-        //switch (classSystem.GetDominantSkillLevel())
-        //{
-        //    case ClassSystem.SkillLevel.Beginner:
-        //        panels[0].SetActive(true);
-        //        panels[1].SetActive(false);
-        //        panels[2].SetActive(false);
-        //        break;
-        //    case ClassSystem.SkillLevel.Intermediate:
-        //        panels[0].SetActive(false);
-        //        panels[1].SetActive(true);
-        //        panels[2].SetActive(false);
-        //        break;
-        //    case ClassSystem.SkillLevel.Advanced:
-        //        panels[0].SetActive(false);
-        //        panels[1].SetActive(false);
-        //        panels[2].SetActive(true);
-        //        break;
-        //}
+    //    //switch (classSystem.GetDominantSkillLevel())
+    //    //{
+    //    //    case ClassSystem.SkillLevel.Beginner:
+    //    //        panels[0].SetActive(true);
+    //    //        panels[1].SetActive(false);
+    //    //        panels[2].SetActive(false);
+    //    //        break;
+    //    //    case ClassSystem.SkillLevel.Intermediate:
+    //    //        panels[0].SetActive(false);
+    //    //        panels[1].SetActive(true);
+    //    //        panels[2].SetActive(false);
+    //    //        break;
+    //    //    case ClassSystem.SkillLevel.Advanced:
+    //    //        panels[0].SetActive(false);
+    //    //        panels[1].SetActive(false);
+    //    //        panels[2].SetActive(true);
+    //    //        break;
+    //    //}
 
-    }
+    //}
 
 
 }

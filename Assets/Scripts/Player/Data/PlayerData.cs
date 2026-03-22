@@ -17,7 +17,7 @@ public class PlayerData
 
     public int deathCount;
 
-    public SkillLevel playerLevel;
+    public SkillLevel playerLevel = SkillLevel.Beginner;
 
     public float skillScore;
     public float beginnerValue;
