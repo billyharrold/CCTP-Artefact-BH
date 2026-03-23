@@ -10,7 +10,7 @@ public class DummyKillPlayer : MonoBehaviour
 
     //public ClassSystem classSystem;
 
-    //[SerializeField] private DataEvaluator dataEvaluator;
+    [SerializeField] private DataEvaluator dataEvaluator;
     //[SerializeField] private PlatformSkillRules sectionSkillRules;
 
     private void OnTriggerEnter(Collider other)
@@ -22,6 +22,7 @@ public class DummyKillPlayer : MonoBehaviour
         //RespawnPlayer.Instance.OnTriggerEnter(other);
         PlayerManager.Instance.SetDeathCount();
         Debug.Log(PlayerManager.Instance.GetDeathCount());
+        dataEvaluator.TrackDeath();
         //dataEvaluator.ApplyNewSkillData(sectionSkillRules);
         // classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());
     }

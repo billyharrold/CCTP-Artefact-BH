@@ -69,4 +69,10 @@ public class DataEvaluator : MonoBehaviour
         ApplyNewSkillData();
         
     }
+
+    public void resetRollingData()
+    {
+        rollingDeaths = 0;
+        rollingTime = 0f;
+    }
 }

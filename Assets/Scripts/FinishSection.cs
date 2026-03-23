@@ -1,23 +1,28 @@
 using UnityEngine;
 
-public class finishLevel : MonoBehaviour
+// similar to finish level but this caters to more dynamic system
+// this will reset timer, and apply new skill level and next skill model for eval.
+public class FinishSection : MonoBehaviour
 {
+
     [SerializeField] private DataEvaluator dataEvaluator;
-    [SerializeField] private PlatformSkillRules sectionSkillRules;
+    //[SerializeField] private PlatformSkillRules sectionSkillRules;
 
     public UITeachingZone nextTeachingZone;
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (CompareTag("Player"))
         {
-            //dataEvaluator.EvaluatePlayerData(sectionSkillRules);
-            dataEvaluator.ApplyNewSkillData(sectionSkillRules);
-            Debug.Log("Level Finished!");
-            SetNextTeachingState(nextTeachingZone);
             dataEvaluator.resetRollingData();
+            SetNextTeachingState(nextTeachingZone);
+            Debug.Log(nextTeachingZone);
         }
+       
     }
+
+
 
     private void SetNextTeachingState(UITeachingZone nextZone)
     {
@@ -25,5 +30,6 @@ public class finishLevel : MonoBehaviour
 
         UIController.Instance.SetUIState(nextZone);
     }
+
 
 }
