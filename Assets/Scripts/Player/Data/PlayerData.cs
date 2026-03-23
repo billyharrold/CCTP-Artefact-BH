@@ -17,6 +17,7 @@ public class PlayerData
 
     public int deathCount;
 
+    // Set to beginner as should assume all players are beginners.
     public SkillLevel playerLevel = SkillLevel.Beginner;
 
     public float skillScore;

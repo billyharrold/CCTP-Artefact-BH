@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 
-public enum UISkillState
+public enum UITeachingZone
 {
     Checkpoints,
     JumpingTeaching,

@@ -5,6 +5,6 @@ public class SelectTeachingZOne : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        UIController.Instance.SetUIState(UISkillState.JumpingTeaching);
+        UIController.Instance.SetUIState(UITeachingZone.JumpingTeaching);
     }
 }

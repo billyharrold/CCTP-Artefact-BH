@@ -3022,6 +3022,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1817667309}
     - target: {fileID: 9153534369197706412, guid: c30d353ced3ad0847b152e82ac06bd31, type: 3}
+      propertyPath: nextTeachingZone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153534369197706412, guid: c30d353ced3ad0847b152e82ac06bd31, type: 3}
       propertyPath: sectionSkillRules
       value: 
       objectReference: {fileID: 11400000, guid: 76652db57c34f78458f4cd34b1244069, type: 2}
@@ -5386,6 +5390,10 @@ PrefabInstance:
       propertyPath: dataEvaluator
       value: 
       objectReference: {fileID: 1817667309}
+    - target: {fileID: 9153534369197706412, guid: c30d353ced3ad0847b152e82ac06bd31, type: 3}
+      propertyPath: nextTeachingZone
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9153534369197706412, guid: c30d353ced3ad0847b152e82ac06bd31, type: 3}
       propertyPath: sectionSkillRules
       value: 
@@ -15996,6 +16004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataEvaluator: {fileID: 1817667309}
   sectionSkillRules: {fileID: 0}
+  nextTeachingZone: 0
 --- !u!65 &1990749370
 BoxCollider:
   m_ObjectHideFlags: 0

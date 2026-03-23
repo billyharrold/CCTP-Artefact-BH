@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
     public UISkillSets movingSpikesUI;
 
    
-    public UISkillState skillState;
+    public UITeachingZone skillState;
     
     private SkillLevel currentSkillLevel;
 
@@ -57,7 +57,7 @@ public class UIController : MonoBehaviour
 
         currentSkillLevel = PlayerManager.Instance.GetSkillLevel();
 
-       SetUIState(UISkillState.Checkpoints);
+       SetUIState(UITeachingZone.Checkpoints);
 
         //checkpointUI.HideAllUI();
         //jumpingTeachingUI.HideAllUI();
@@ -83,7 +83,7 @@ public class UIController : MonoBehaviour
         UpdatePanels();
     }
 
-    public void SetUIState(UISkillState state)
+    public void SetUIState(UITeachingZone state)
     {
         skillState = state;
         UpdatePanels();
@@ -99,13 +99,13 @@ public class UIController : MonoBehaviour
 
         switch (skillState)
         {
-            case UISkillState.Checkpoints:
+            case UITeachingZone.Checkpoints:
                 checkpointUI.ShowUI(currentSkillLevel);
                 break;
-            case UISkillState.JumpingTeaching:
+            case UITeachingZone.JumpingTeaching:
                 jumpingTeachingUI.ShowUI(currentSkillLevel);
                 break;
-            case UISkillState.MovingSpikes:
+            case UITeachingZone.MovingSpikes:
                 movingSpikesUI.ShowUI(currentSkillLevel);
                 break;
         }
