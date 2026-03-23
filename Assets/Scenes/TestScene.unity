@@ -14739,7 +14739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultskillModel: {fileID: 11400000, guid: b66fb390c29860845bbc20a7d8903ada, type: 2}
-  interval: 5
+  interval: 2
 --- !u!114 &1817667310
 MonoBehaviour:
   m_ObjectHideFlags: 0
