@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -20,6 +21,9 @@ public class DataEvaluator : MonoBehaviour
     private float evalTimer;
     [SerializeField] private float interval = 5f;
 
+    private float smoothing = 0.5f;
+    private float smoothingEffect = 0.45f;
+
 
 
     private void Start()
@@ -31,13 +35,15 @@ public class DataEvaluator : MonoBehaviour
     public PlayerData EvaluatePlayerData(PlatformSkillRules skillModel)
     {
         Debug.Log($" Using Name: {skillModel.name}");
-        float timedPerformance = Mathf.InverseLerp(skillModel.maxTime, skillModel.fastTime, rollingTime);
+        float timedPerformance = 1f - Mathf.InverseLerp(skillModel.fastTime, skillModel.maxTime, rollingTime);
 
         float deathPerformance = 1f - Mathf.InverseLerp(0, skillModel.maxDeaths, rollingDeaths);
 
         float performanceScore = timedPerformance * skillModel.timeWeighting + deathPerformance * skillModel.deathWeighting;
 
-        return SkillClassifier.EvaluateSkill(skillModel, performanceScore);
+        float smoothedScore = smoothingEffect * performanceScore + (1 - smoothingEffect) * smoothing;
+
+        return SkillClassifier.EvaluateSkill(skillModel, smoothedScore);
     }
 
 
