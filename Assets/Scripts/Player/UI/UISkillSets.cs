@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum UITeachingZone
 {
+    
     Checkpoints,
     JumpingTeaching,
     MovingSpikes,

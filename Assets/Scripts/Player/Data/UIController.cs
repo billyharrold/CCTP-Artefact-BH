@@ -101,9 +101,10 @@ public class UIController : MonoBehaviour
 
         switch (skillState)
         {
+            
             case UITeachingZone.Checkpoints:
                 checkpointUI.ShowUI(currentSkillLevel);
-                //goalUI.ShowUI(currentSkillLevel);
+                goalUI.ShowUI(currentSkillLevel);
                 break;
             case UITeachingZone.JumpingTeaching:
                 jumpingTeachingUI.ShowUI(currentSkillLevel);

@@ -7,6 +7,8 @@ public class Checkpoint : MonoBehaviour
     
     private Collider trigger;
 
+    //public GameObject checkpointUI;
+
     private void Awake()
     {
         trigger = GetComponent<Collider>();
