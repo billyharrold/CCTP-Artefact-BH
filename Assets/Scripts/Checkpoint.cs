@@ -9,6 +9,14 @@ public class Checkpoint : MonoBehaviour
 
     //public GameObject checkpointUI;
 
+    [SerializeField] private UIController uiController;
+
+    private UITeachingZone currentZone = UITeachingZone.Checkpoints;
+
+    public UITeachingZone nextZone;
+
+
+
     private void Awake()
     {
         trigger = GetComponent<Collider>();
@@ -23,9 +31,16 @@ public class Checkpoint : MonoBehaviour
         // Check to disable the checkpoint after being triggered so player can't spawn backwards.
         else if (other.CompareTag("Player"))
         {
+            uiController.SetUIState(currentZone);
             RespawnPlayer.Instance.spawnTransform = transform;
             trigger.enabled = false;
+
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        uiController.SetUIState(nextZone);
     }
 }

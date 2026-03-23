@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     public static UIController Instance;
 
     [Header("UI Groups for different level sections")]
+    public UISkillSets introUI;
     public UISkillSets goalUI;
     public UISkillSets checkpointUI;
     public UISkillSets jumpingTeachingUI;
@@ -94,6 +95,7 @@ public class UIController : MonoBehaviour
 
     public void UpdatePanels()
     {
+        introUI.HideAllUI();
         goalUI.HideAllUI();
         checkpointUI.HideAllUI();
         jumpingTeachingUI.HideAllUI();
@@ -101,7 +103,10 @@ public class UIController : MonoBehaviour
 
         switch (skillState)
         {
-            
+            case UITeachingZone.Intro:
+                introUI.ShowUI(currentSkillLevel);
+                goalUI.ShowUI(currentSkillLevel);
+                break;
             case UITeachingZone.Checkpoints:
                 checkpointUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
