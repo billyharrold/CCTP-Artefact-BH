@@ -15,8 +15,9 @@ public class UIController : MonoBehaviour
 
 
     public static UIController Instance;
-    
+
     [Header("UI Groups for different level sections")]
+    public UISkillSets goalUI;
     public UISkillSets checkpointUI;
     public UISkillSets jumpingTeachingUI;
     public UISkillSets movingSpikesUI;
@@ -93,6 +94,7 @@ public class UIController : MonoBehaviour
 
     public void UpdatePanels()
     {
+        goalUI.HideAllUI();
         checkpointUI.HideAllUI();
         jumpingTeachingUI.HideAllUI();
         movingSpikesUI.HideAllUI();
@@ -101,14 +103,20 @@ public class UIController : MonoBehaviour
         {
             case UITeachingZone.Checkpoints:
                 checkpointUI.ShowUI(currentSkillLevel);
+                //goalUI.ShowUI(currentSkillLevel);
                 break;
             case UITeachingZone.JumpingTeaching:
                 jumpingTeachingUI.ShowUI(currentSkillLevel);
+                goalUI.ShowUI(currentSkillLevel);
                 break;
             case UITeachingZone.MovingSpikes:
                 movingSpikesUI.ShowUI(currentSkillLevel);
+                goalUI.ShowUI(currentSkillLevel);
                 break;
         }
+
+       
+      
     }
 
     // Update is called once per frame
