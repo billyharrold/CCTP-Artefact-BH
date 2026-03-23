@@ -12,10 +12,11 @@ public class finishLevel : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //dataEvaluator.EvaluatePlayerData(sectionSkillRules);
-            dataEvaluator.ApplyNewSkillData(sectionSkillRules);
+            dataEvaluator.SetNewModel(sectionSkillRules);
             Debug.Log("Level Finished!");
             SetNextTeachingState(nextTeachingZone);
             dataEvaluator.resetRollingData();
+            //Debug.Log($"Updated to {sectionSkillRules.name}");
         }
     }
 

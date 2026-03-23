@@ -8,6 +8,7 @@ public class DataEvaluator : MonoBehaviour
     // uses scriptable objects to define rules for data weighting and classification.
 
    [SerializeField] private PlatformSkillRules DefaultskillModel;
+   private PlatformSkillRules currentModel;
 
    private int rollingDeaths;
    private float rollingTime;
@@ -19,9 +20,17 @@ public class DataEvaluator : MonoBehaviour
     private float evalTimer;
     [SerializeField] private float interval = 5f;
 
+
+
+    private void Start()
+    {
+        currentModel = DefaultskillModel;
+    }
+
     // spelt this function wrong - FIX
     public PlayerData EvaluatePlayerData(PlatformSkillRules skillModel)
     {
+        Debug.Log($" Using Name: {skillModel.name}");
         float timedPerformance = Mathf.InverseLerp(skillModel.maxTime, skillModel.fastTime, rollingTime);
 
         float deathPerformance = 1f - Mathf.InverseLerp(0, skillModel.maxDeaths, rollingDeaths);
@@ -32,23 +41,37 @@ public class DataEvaluator : MonoBehaviour
     }
 
 
-    public void ApplyNewSkillData(PlatformSkillRules skillModel = null)
+    public void ApplyNewSkillData()
     {
         PlatformSkillRules model;
-        if (skillModel != null)
+
+        if (currentModel != null)
         {
-            model = skillModel;
+            model = currentModel;
         }
         else
         {
             model = DefaultskillModel;
         }
 
-
         PlayerData newData = EvaluatePlayerData(model);
         PlayerManager.Instance.UpdatePlayerData(newData);
     }
 
+    public void SetNewModel(PlatformSkillRules newModel)
+    {
+        if (newModel == null)
+        {
+            return;
+        }
+
+        currentModel = newModel;
+
+        resetRollingData();
+        Debug.Log($"Updated to {newModel.name}");
+
+
+    }
 
     private void Update()
     {
