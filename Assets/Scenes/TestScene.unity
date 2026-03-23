@@ -4399,9 +4399,9 @@ MonoBehaviour:
     intermediateUI: {fileID: 1484265183907955658}
     advancedUI: {fileID: 4024365786465772077}
   checkpointUI:
-    beginnerUI: {fileID: 999575385}
-    intermediateUI: {fileID: 1981095751}
-    advancedUI: {fileID: 1213434380}
+    beginnerUI: {fileID: 5486773270789826130}
+    intermediateUI: {fileID: 5486773270789826130}
+    advancedUI: {fileID: 138710897159763791}
   jumpingTeachingUI:
     beginnerUI: {fileID: 138710895160368224}
     intermediateUI: {fileID: 138710896514527205}
@@ -17660,6 +17660,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6611012323188314192, guid: fa9fe46dfd8171540a9bc4ff92e867ba, type: 3}
   m_PrefabInstance: {fileID: 1218589447992373933}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &138710897159763791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6110061435645266757, guid: 177b81565228a58448071b971fe11dcb, type: 3}
+  m_PrefabInstance: {fileID: 45879212641556293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &148868790645948770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19306,6 +19311,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7609230518211736739, guid: 2dac59f7ce9174d4a826d2e989e33d8a, type: 3}
   m_PrefabInstance: {fileID: 2812386996174461599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5486773270789826130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3754435411967354254, guid: dfd38a6b9deaeb54186664ab5470154d, type: 3}
+  m_PrefabInstance: {fileID: 1813141718893309672}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5559970831834852935 stripped
 GameObject:
