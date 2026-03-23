@@ -17,14 +17,14 @@ public class DataEvaluator : MonoBehaviour
     private float elapsedTime;
 
     private float evalTimer;
-    [SerializeField] private float interval = 3f;
+    [SerializeField] private float interval = 5f;
 
     // spelt this function wrong - FIX
     public PlayerData EvaluatePlayerData(PlatformSkillRules skillModel)
     {
-        float timedPerformance = Mathf.InverseLerp(skillModel.maxTime, skillModel.fastTime, PlayerManager.Instance.GetElapsedTime());
+        float timedPerformance = Mathf.InverseLerp(skillModel.maxTime, skillModel.fastTime, rollingTime);
 
-        float deathPerformance = 1f - Mathf.InverseLerp(0, skillModel.maxDeaths, PlayerManager.Instance.GetDeathCount());
+        float deathPerformance = 1f - Mathf.InverseLerp(0, skillModel.maxDeaths, rollingDeaths);
 
         float performanceScore = timedPerformance * skillModel.timeWeighting + deathPerformance * skillModel.deathWeighting;
 
@@ -66,6 +66,7 @@ public class DataEvaluator : MonoBehaviour
     public void TrackDeath()
     {
         rollingDeaths++;
+        ApplyNewSkillData();
         
     }
 }

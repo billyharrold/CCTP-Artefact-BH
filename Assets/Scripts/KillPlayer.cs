@@ -7,6 +7,8 @@ public class KillPlayer : MonoBehaviour
     // Increases death count in player data. Decoupled from respawn logic.
 
 
+    [SerializeField] private DataEvaluator evaluator;
+
     //public ClassSystem classSystem;
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +20,7 @@ public class KillPlayer : MonoBehaviour
         RespawnPlayer.Instance.OnTriggerEnter(other);
         PlayerManager.Instance.SetDeathCount();
         Debug.Log(PlayerManager.Instance.GetDeathCount());
+        evaluator.TrackDeath();
        // classSystem.UpdateSkillLevels(PlayerManager.Instance.GetDeathCount());
     }
 }
