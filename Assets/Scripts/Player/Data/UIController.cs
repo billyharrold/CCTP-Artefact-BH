@@ -59,7 +59,7 @@ public class UIController : MonoBehaviour
 
         currentSkillLevel = PlayerManager.Instance.GetSkillLevel();
 
-       SetUIState(UITeachingZone.Checkpoints);
+       SetUIState(UITeachingZone.Intro);
 
         //checkpointUI.HideAllUI();
         //jumpingTeachingUI.HideAllUI();
