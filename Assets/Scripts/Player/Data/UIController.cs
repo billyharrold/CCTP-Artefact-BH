@@ -116,10 +116,15 @@ public class UIController : MonoBehaviour
             case UITeachingZone.JumpingTeaching:
                 jumpingTeachingUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
+                
                 break;
             case UITeachingZone.MovingSpikes:
                 movingSpikesUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
+                break;
+            case UITeachingZone.MovingPlatforms:
+                goalUI.ShowUI(currentSkillLevel);
+                movingPlatformsUI.ShowUI(currentSkillLevel);
                 break;
         }
 
