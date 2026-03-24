@@ -15,7 +15,7 @@ public class FinishSection : MonoBehaviour
     {
         if (CompareTag("Player"))
         {
-            dataEvaluator.resetRollingData();
+            dataEvaluator.ResetRollingData();
             SetNextTeachingState(nextTeachingZone);
             Debug.Log(nextTeachingZone);
         }

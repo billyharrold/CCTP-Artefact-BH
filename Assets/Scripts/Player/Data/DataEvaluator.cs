@@ -73,7 +73,7 @@ public class DataEvaluator : MonoBehaviour
 
         currentModel = newModel;
 
-        resetRollingData();
+        ResetRollingData();
         Debug.Log($"Updated to {newModel.name}");
 
 
@@ -86,7 +86,7 @@ public class DataEvaluator : MonoBehaviour
 
         if (evalTimer >= interval)
         {
-            Debug.Log("Eval occuring");
+            //Debug.Log("Eval occuring");
             ApplyNewSkillData();
             evalTimer = 0f;
         }
@@ -94,12 +94,13 @@ public class DataEvaluator : MonoBehaviour
 
     public void TrackDeath()
     {
+        Debug.Log("DEAD");
         rollingDeaths++;
         ApplyNewSkillData();
         
     }
 
-    public void resetRollingData()
+    public void ResetRollingData()
     {
         rollingDeaths = 0;
         rollingTime = 0f;

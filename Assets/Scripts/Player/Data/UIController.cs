@@ -16,16 +16,25 @@ public class UIController : MonoBehaviour
 
     public static UIController Instance;
 
-    [Header("UI Groups for different level sections")]
+    [Header("Current teaching zone")]
+    public UITeachingZone skillState;
+
+    [Header("UI Groups For Different Level Sections")]
+    [Header("Basics UI Group")]
     public UISkillSets introUI;
     public UISkillSets goalUI;
     public UISkillSets checkpointUI;
+
+    [Header("Teaching Movement UI group")]
     public UISkillSets jumpingTeachingUI;
+    public UISkillSets sprintJumpUI;
+    
+    [Header("Level Elements UI group")]
     public UISkillSets movingSpikesUI;
     public UISkillSets movingPlatformsUI;
 
 
-    public UITeachingZone skillState;
+    
     
     private SkillLevel currentSkillLevel;
 
@@ -99,7 +108,11 @@ public class UIController : MonoBehaviour
         introUI.HideAllUI();
         goalUI.HideAllUI();
         checkpointUI.HideAllUI();
+
         jumpingTeachingUI.HideAllUI();
+        sprintJumpUI.HideAllUI();
+       
+        
         movingSpikesUI.HideAllUI();
         movingPlatformsUI.HideAllUI();
 
@@ -108,20 +121,29 @@ public class UIController : MonoBehaviour
             case UITeachingZone.Intro:
                 introUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
+                //sprintJumpUI.ShowUI(currentSkillLevel);
                 break;
+
             case UITeachingZone.Checkpoints:
                 checkpointUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
                 break;
+
             case UITeachingZone.JumpingTeaching:
                 jumpingTeachingUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
-                
                 break;
+
+            case UITeachingZone.SprintJump:
+                sprintJumpUI.ShowUI(currentSkillLevel);
+                goalUI.ShowUI(currentSkillLevel);
+                break;
+
             case UITeachingZone.MovingSpikes:
                 movingSpikesUI.ShowUI(currentSkillLevel);
                 goalUI.ShowUI(currentSkillLevel);
                 break;
+
             case UITeachingZone.MovingPlatforms:
                 goalUI.ShowUI(currentSkillLevel);
                 movingPlatformsUI.ShowUI(currentSkillLevel);

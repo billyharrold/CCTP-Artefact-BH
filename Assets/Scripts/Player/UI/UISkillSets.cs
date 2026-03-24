@@ -9,7 +9,7 @@ public enum UITeachingZone
     JumpingTeaching,
     MovingSpikes,
     MovingPlatforms,
-    WorldSpaceUI,
+    SprintJump,
     LevelCompletion
 
 }

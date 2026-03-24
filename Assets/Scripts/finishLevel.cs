@@ -15,7 +15,7 @@ public class finishLevel : MonoBehaviour
             dataEvaluator.SetNewModel(sectionSkillRules);
             Debug.Log("Level Finished!");
             SetNextTeachingState(nextTeachingZone);
-            dataEvaluator.resetRollingData();
+            dataEvaluator.ResetRollingData();
             //Debug.Log($"Updated to {sectionSkillRules.name}");
         }
     }
