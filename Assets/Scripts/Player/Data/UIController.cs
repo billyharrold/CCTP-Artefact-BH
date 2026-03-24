@@ -22,8 +22,9 @@ public class UIController : MonoBehaviour
     public UISkillSets checkpointUI;
     public UISkillSets jumpingTeachingUI;
     public UISkillSets movingSpikesUI;
+    public UISkillSets movingPlatformsUI;
 
-   
+
     public UITeachingZone skillState;
     
     private SkillLevel currentSkillLevel;
@@ -100,6 +101,7 @@ public class UIController : MonoBehaviour
         checkpointUI.HideAllUI();
         jumpingTeachingUI.HideAllUI();
         movingSpikesUI.HideAllUI();
+        movingPlatformsUI.HideAllUI();
 
         switch (skillState)
         {
