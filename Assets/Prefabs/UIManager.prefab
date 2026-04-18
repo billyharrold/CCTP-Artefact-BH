@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3994505370856205743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8563934542937486458}
+  - component: {fileID: 1942528599856534236}
+  - component: {fileID: 518663038968648305}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8563934542937486458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994505370856205743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 476.23917, y: 395.76163, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942528599856534236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994505370856205743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3601972a4b717f545b8fd318431052c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+--- !u!114 &518663038968648305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994505370856205743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3980da600b3e0b947a79535a41c85fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillState: 0
+  introUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
+  goalUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
+  checkpointUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
+  jumpingTeachingUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
+  sprintJumpUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
+  movingSpikesUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
+  movingPlatformsUI:
+    beginnerUI: {fileID: 0}
+    intermediateUI: {fileID: 0}
+    advancedUI: {fileID: 0}
