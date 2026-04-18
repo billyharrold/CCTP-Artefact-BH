@@ -14465,6 +14465,10 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 541104575}
+    - target: {fileID: 3370439348232217164, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3396644654537088498, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: m_LocalScale.x
       value: 35.551636

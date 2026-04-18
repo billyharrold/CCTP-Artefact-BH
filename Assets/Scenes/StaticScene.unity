@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 2049504171}
+    - target: {fileID: 3370439348232217164, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7326751577391456076, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 95.5
@@ -1689,7 +1693,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882898016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
