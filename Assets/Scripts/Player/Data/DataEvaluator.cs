@@ -22,7 +22,7 @@ public class DataEvaluator : MonoBehaviour
     [SerializeField] private float interval = 5f;
 
     private float smoothing = 0.5f;
-    private float smoothingEffect = 0.1f;
+    private float smoothingEffect = 0.4f;
 
 
 

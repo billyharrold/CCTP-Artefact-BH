@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathWeighting: 0
   timeWeighting: 1
-  maxDeaths: 1
-  maxTime: 30
-  fastTime: 5
+  maxDeaths: 0
+  maxTime: 25
+  fastTime: 0.2
   beginnerCurve:
     serializedVersion: 2
     m_Curve:

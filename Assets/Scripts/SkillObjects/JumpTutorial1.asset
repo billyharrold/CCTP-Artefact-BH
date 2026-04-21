@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be1c9254b4356e4f84f9701874b32ae, type: 3}
   m_Name: JumpTutorial1
   m_EditorClassIdentifier: 
-  deathWeighting: 0.7
-  timeWeighting: 0.3
-  maxDeaths: 10
-  maxTime: 30
-  fastTime: 4
+  deathWeighting: 0.21
+  timeWeighting: 0.65
+  maxDeaths: 3
+  maxTime: 15
+  fastTime: 0.2
   beginnerCurve:
     serializedVersion: 2
     m_Curve:
@@ -189,4 +189,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   beginnerThreshold: 0.4
-  advancedThreshold: 0.8
+  advancedThreshold: 0.85

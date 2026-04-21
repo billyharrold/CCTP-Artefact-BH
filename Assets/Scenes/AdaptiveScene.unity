@@ -12473,6 +12473,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'AdvSprintSign '
       objectReference: {fileID: 0}
+    - target: {fileID: 3742650404310203007, guid: 597300e370cedcb49bf08139d33b57f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623063249448062005, guid: 597300e370cedcb49bf08139d33b57f2, type: 3}
+      propertyPath: m_text
+      value: You're quick! Keep going
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
