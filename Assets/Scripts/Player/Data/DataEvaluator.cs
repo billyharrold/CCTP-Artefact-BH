@@ -22,7 +22,7 @@ public class DataEvaluator : MonoBehaviour
     [SerializeField] private float interval = 5f;
 
     private float smoothing = 0.5f;
-    private float smoothingEffect = 0.45f;
+    private float smoothingEffect = 0.1f;
 
 
 
@@ -42,6 +42,8 @@ public class DataEvaluator : MonoBehaviour
         float performanceScore = timedPerformance * skillModel.timeWeighting + deathPerformance * skillModel.deathWeighting;
 
         float smoothedScore = smoothingEffect * performanceScore + (1 - smoothingEffect) * smoothing;
+        smoothing = smoothedScore;
+
 
         return SkillClassifier.EvaluateSkill(skillModel, smoothedScore);
     }
