@@ -189,4 +189,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   beginnerThreshold: 0.4
-  advancedThreshold: 0.9
+  advancedThreshold: 0.8

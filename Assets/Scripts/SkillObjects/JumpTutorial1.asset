@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathWeighting: 0.21
   timeWeighting: 0.65
-  maxDeaths: 3
-  maxTime: 15
+  maxDeaths: 8
+  maxTime: 60
   fastTime: 0.2
   beginnerCurve:
     serializedVersion: 2
@@ -188,5 +188,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  beginnerThreshold: 0.4
-  advancedThreshold: 0.85
+  beginnerThreshold: 0.3
+  advancedThreshold: 0.75
