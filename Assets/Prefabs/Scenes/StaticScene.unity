@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181767504282431968, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2833245317399221673, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: uiController
       value: 
@@ -772,6 +776,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 788158469}
     m_Modifications:
+    - target: {fileID: 5321983830201412777, guid: 7e6480019028bfd46aa0330b102b1f27, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6589824149489091014, guid: 7e6480019028bfd46aa0330b102b1f27, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
