@@ -14540,6 +14540,18 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 541104575}
+    - target: {fileID: 830616883031421148, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000029504295
+      objectReference: {fileID: 0}
+    - target: {fileID: 830616883031421148, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830616883031421148, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 840777741784585427, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: icon
       value: 
@@ -14550,7 +14562,19 @@ PrefabInstance:
       objectReference: {fileID: 5307614971407515537}
     - target: {fileID: 1181767504282431968, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499011424074560127, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.45063418
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499011424074560127, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8927088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499011424074560127, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 233.569
       objectReference: {fileID: 0}
     - target: {fileID: 1627232623590464802, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: icon
@@ -14660,6 +14684,22 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 541104575}
+    - target: {fileID: 6612724572187180227, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Size.x
+      value: 8.822563
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612724572187180227, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Size.z
+      value: 12.071974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612724572187180227, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Center.x
+      value: 0.8112874
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612724572187180227, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Center.z
+      value: 1.1822429
+      objectReference: {fileID: 0}
     - target: {fileID: 7076745117976154868, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: evaluator
       value: 
@@ -14732,6 +14772,10 @@ PrefabInstance:
       propertyPath: popUpPanel
       value: 
       objectReference: {fileID: 5307614971407515537}
+    - target: {fileID: 8592437816724717030, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9127100496681470467, guid: cb298dfb859d9e5469c19c7213a17f57, type: 3}
       propertyPath: uiController
       value: 

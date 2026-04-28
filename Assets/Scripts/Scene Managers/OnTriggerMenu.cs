@@ -6,6 +6,7 @@ public class OnTriggerMenu : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        GameSceneManager.Instance.LoadMenu();
+        //GameSceneManager.Instance.LoadMenu();
+        Application.Quit();
     }
 }
